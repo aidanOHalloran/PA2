@@ -22,6 +22,7 @@ namespace PA2.Utility
                         DefensePower = randDefenseStrength,
                     };
                     player1.AttackBehavior = new DistractOpponent();
+                    player1.AttackBehavior2 = new Parley();
                     player1.DefendBehavior = new Defense();
                     return player1;
                     break;
@@ -40,6 +41,7 @@ namespace PA2.Utility
                         DefensePower = randDefenseStrength2,
                     };
                     player2.AttackBehavior = new FireCannon();
+                    player2.AttackBehavior2 = new TentacleAttack();
                     player2.DefendBehavior = new Defense();
                     return player2;
                     break;
@@ -58,6 +60,7 @@ namespace PA2.Utility
                         DefensePower = randDefenseStrength3,
                     };
                     player3.AttackBehavior = new SwingSword();
+                    player3.AttackBehavior2 = new FirePistol();
                     player3.DefendBehavior = new Defense();
                     return player3;
                     break;
@@ -78,6 +81,7 @@ namespace PA2.Utility
                         DefensePower = randDefenseStrength4,
                     };
                     player4.AttackBehavior = new DistractOpponent();
+                    player4.AttackBehavior2 = new Parley();
                     player4.DefendBehavior = new Defense();
                     return player4;
                     break;
@@ -115,6 +119,7 @@ namespace PA2.Utility
                                    player2.DefensePower = randDefenseStrength2;
                                    player2.DefendBehavior = new Defense();
                                    player2.AttackBehavior = new FireCannon();
+                                   player2.AttackBehavior2 = new TentacleAttack();
                                    
                                }else if(userInput == 2){
                                    Random rand2 = new Random();
@@ -129,6 +134,7 @@ namespace PA2.Utility
                                    player2.DefensePower = randDefenseStrength2;
                                    player2.DefendBehavior = new Defense();
                                    player2.AttackBehavior = new SwingSword();
+                                   player2.AttackBehavior2 = new FirePistol();
                                
                             }
                         }
@@ -160,6 +166,7 @@ namespace PA2.Utility
                         player2.DefensePower = randDefenseStrength2;
                         player2.DefendBehavior = new Defense();
                         player2.AttackBehavior = new DistractOpponent();
+                        player2.AttackBehavior2 = new Parley();
                         
                     }else if(userInput2 == 2){
                         Random rand2 = new Random();
@@ -174,6 +181,7 @@ namespace PA2.Utility
                         player2.DefensePower = randDefenseStrength2;
                         player2.DefendBehavior = new Defense();
                         player2.AttackBehavior = new SwingSword();
+                        player2.AttackBehavior2 = new Parley();
                 }
                 
                 }else if(player1.Name == "Will Turner"){
@@ -204,6 +212,7 @@ namespace PA2.Utility
                         player2.DefensePower = randDefenseStrength2;
                         player2.DefendBehavior = new Defense();
                         player2.AttackBehavior = new DistractOpponent();
+                        player2.AttackBehavior2 = new Parley();
                         
                     }else if(userInput3 == 2){
                         Random rand2 = new Random();

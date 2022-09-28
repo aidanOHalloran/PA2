@@ -98,23 +98,47 @@ namespace PA2.Utility
 
         static void BoostedAttackOnPlayer2(Player player1, Player player2)
         {
-            System.Console.WriteLine("\t***CRITICAL***");
-            double damageDealt = (player1.AttackStrength - player2.DefensePower) * (1.2);
-            if(player1.AttackStrength > player2.DefensePower){
-                System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
-                System.Console.Write(player1.Name + " used "); player1.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Attack Power: {player1.AttackStrength}\n{player2.Name} Defense Power: {player2.DefensePower}");
-                player2.Health = player2.Health - damageDealt;
-            }else if(player1.AttackStrength < player2.DefensePower){
-                System.Console.WriteLine("\tATTACK FAILED\n");
-                System.Console.Write(player2.Name + " "); player2.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Defense Power: {player2.DefensePower}\n{player1.Name} Attack Power: {player1.AttackStrength}");
-                player1.Health = player1.Health + damageDealt;
+            int attackChoice = Player1WhichAttack(player1, player2);
+
+            if(attackChoice == 1)
+                {
+                    System.Console.WriteLine("\t***CRITICAL***");
+                double damageDealt = (player1.AttackStrength - player2.DefensePower) * (1.2);
+                if(player1.AttackStrength > player2.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player1.Name + " used "); player1.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Attack Power: {player1.AttackStrength}\n{player2.Name} Defense Power: {player2.DefensePower}");
+                    player2.Health = player2.Health - damageDealt;
+                }else if(player1.AttackStrength < player2.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player2.Name + " "); player2.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Defense Power: {player2.DefensePower}\n{player1.Name} Attack Power: {player1.AttackStrength}");
+                    player1.Health = player1.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
+                }
+            
+            else if(attackChoice == 2){
+                    System.Console.WriteLine("\t***CRITICAL***");
+                double damageDealt = (player1.AttackStrength - player2.DefensePower) * (1.2);
+                if(player1.AttackStrength > player2.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player1.Name + " used "); player1.AttackBehavior2.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Attack Power: {player1.AttackStrength}\n{player2.Name} Defense Power: {player2.DefensePower}");
+                    player2.Health = player2.Health - damageDealt;
+                }else if(player1.AttackStrength < player2.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player2.Name + " "); player2.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Defense Power: {player2.DefensePower}\n{player1.Name} Attack Power: {player1.AttackStrength}");
+                    player1.Health = player1.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
             }
-            System.Console.WriteLine("\n\nPress any key to continue");
-            Console.ReadKey();
         }
 
         static void RegularAttackOnPlayer2(Player player1, Player player2)
         {
+            int attackChoice = Player1WhichAttack(player1, player2);
+            
+            if(attackChoice == 1){
             double damageDealt = (player1.AttackStrength - player2.DefensePower) * (1.0);
             if(player1.AttackStrength > player2.DefensePower){
                 System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
@@ -126,42 +150,96 @@ namespace PA2.Utility
                 player1.Health = player1.Health + damageDealt;
             }
             System.Console.WriteLine("\n\nPress any key to continue");
-            Console.ReadKey();   
+            Console.ReadKey();
+            }
+
+            else if(attackChoice == 2){
+                 double damageDealt = (player1.AttackStrength - player2.DefensePower) * (1.0);
+            if(player1.AttackStrength > player2.DefensePower){
+                System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                System.Console.Write(player1.Name + " used "); player1.AttackBehavior2.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Attack Power: {player1.AttackStrength}\n{player2.Name} Defense Power: {player2.DefensePower}");
+                player2.Health = player2.Health - damageDealt;
+            }else if(player1.AttackStrength < player2.DefensePower){
+                System.Console.WriteLine("\tATTACK FAILED\n");
+               System.Console.Write(player2.Name + " used "); player2.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Defense Power: {player2.DefensePower}\n{player1.Name} Attack Power: {player1.AttackStrength}");
+                player1.Health = player1.Health + damageDealt;
+            }
+            System.Console.WriteLine("\n\nPress any key to continue");
+            Console.ReadKey();
+            }
         }
 
          static void BoostedAttackOnPlayer1(Player player1, Player player2)
         {
-            System.Console.WriteLine("\t***CRITICAL***");
-            double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.2);
-            if(player2.AttackStrength > player1.DefensePower){
-                System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
-                System.Console.Write(player2.Name + " used "); player2.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
-                player1.Health = player1.Health - damageDealt;
-            }else if(player2.AttackStrength < player1.DefensePower){
-                System.Console.WriteLine("\tATTACK FAILED\n");
-                System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
-                player2.Health = player2.Health + damageDealt;
+            int attackChoice = Player2WhichAttack(player1, player2);
+
+            if(attackChoice == 1){
+                System.Console.WriteLine("\t***CRITICAL***");
+                double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.2);
+                if(player2.AttackStrength > player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player2.Name + " used "); player2.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
+                    player1.Health = player1.Health - damageDealt;
+                }else if(player2.AttackStrength < player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
+                    player2.Health = player2.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
             }
-            System.Console.WriteLine("\n\nPress any key to continue");
-            Console.ReadKey();
-            
+
+            else if(attackChoice == 2){
+                    System.Console.WriteLine("\t***CRITICAL***");
+                double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.2);
+                if(player2.AttackStrength > player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player2.Name + " used "); player2.AttackBehavior2.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
+                    player1.Health = player1.Health - damageDealt;
+                }else if(player2.AttackStrength < player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
+                    player2.Health = player2.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
+            }
         }
 
         static void RegularAttackOnPlayer1(Player player1, Player player2)
         {
-            double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.0);
-            if(player2.AttackStrength > player1.DefensePower){
-                System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
-                System.Console.Write(player2.Name + " used "); player2.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
-                player1.Health = player1.Health - damageDealt;
-            }else if(player2.AttackStrength < player1.DefensePower){
-                System.Console.WriteLine("\tATTACK FAILED\n");
-                System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
-                player2.Health = player2.Health + damageDealt;
+            int attackChoice = Player2WhichAttack(player1, player2);
+
+            if(attackChoice == 1){
+                double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.0);
+                if(player2.AttackStrength > player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player2.Name + " used "); player2.AttackBehavior.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
+                    player1.Health = player1.Health - damageDealt;
+                }else if(player2.AttackStrength < player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
+                    player2.Health = player2.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
             }
-            System.Console.WriteLine("\n\nPress any key to continue");
-            Console.ReadKey();
-            
+
+            else if(attackChoice == 2){
+                    System.Console.WriteLine("\t***CRITICAL***");
+                double damageDealt = (player2.AttackStrength - player1.DefensePower) * (1.2);
+                if(player2.AttackStrength > player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK SUCCESSFUL\n");
+                    System.Console.Write(player2.Name + " used "); player2.AttackBehavior2.Attack(); System.Console.Write($" for {Math.Round(damageDealt, 2)} damage on {player1.Name}.\n\n{player2.Name} Attack Power: {player2.AttackStrength}\n{player1.Name} Defense Power: {player1.DefensePower}");
+                    player1.Health = player1.Health - damageDealt;
+                }else if(player2.AttackStrength < player1.DefensePower){
+                    System.Console.WriteLine("\tATTACK FAILED\n");
+                    System.Console.Write(player1.Name + " used "); player1.DefendBehavior.Defend(); System.Console.Write($" for {Math.Round(-damageDealt, 2)} damage on {player2.Name}.\n\n{player1.Name} Defense Power: {player1.DefensePower}\n{player2.Name} Attack Power: {player2.AttackStrength}");
+                    player2.Health = player2.Health + damageDealt;
+                }
+                System.Console.WriteLine("\n\nPress any key to continue");
+                Console.ReadKey();
+            }
         }
 
         static void AnnounceWinner(Player player1, Player player2)
@@ -181,6 +259,30 @@ namespace PA2.Utility
             }else{
                 return true;
             }
+        }
+
+        static int Player1WhichAttack(Player player1, Player player2){
+            System.Console.Write($"Select an attack:\n\n1. "); player1.AttackBehavior.Attack(); System.Console.Write("\n2. "); player1.AttackBehavior2.Attack();
+            string attackChoiceString = Console.ReadLine();
+            int attackChoice;
+            while(!int.TryParse(attackChoiceString, out attackChoice)){
+                System.Console.WriteLine("Enter either 1 or 2");
+            }if(attackChoice != 1 && attackChoice != 2){
+                attackChoice = 1;
+            }
+        return attackChoice;
+        }
+
+        static int Player2WhichAttack(Player player1, Player player2){
+            System.Console.Write($"Select an attack:\n\n1. "); player2.AttackBehavior.Attack(); System.Console.Write("\n2. "); player2.AttackBehavior2.Attack();
+            string attackChoiceString = Console.ReadLine();
+            int attackChoice;
+            while(!int.TryParse(attackChoiceString, out attackChoice)){
+                System.Console.WriteLine("Enter either 1 or 2");
+            }if(attackChoice != 1 && attackChoice != 2){
+                attackChoice = 1;
+            }
+        return attackChoice;
         }
     }
 }

@@ -12,6 +12,7 @@ namespace PA2.Models
         public double DefensePower {get; set;}
 
         public IAttack AttackBehavior {get; set;}
+        public IAttack AttackBehavior2 {get; set;}
         public IDefend DefendBehavior {get; set;}
     }
 }   
