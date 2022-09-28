@@ -1,0 +1,15 @@
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.csproj.AssemblyReference.cache
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.AssemblyInfoInputs.cache
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.AssemblyInfo.cs
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.csproj.CoreCompileInputs.cache
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/bin/Debug/net6.0/PA2
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/bin/Debug/net6.0/PA2.deps.json
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/bin/Debug/net6.0/PA2.runtimeconfig.json
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/bin/Debug/net6.0/PA2.dll
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/bin/Debug/net6.0/PA2.pdb
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.dll
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/refint/PA2.dll
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.pdb
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/PA2.genruntimeconfig.cache
+/Users/aidanohalloran/Desktop/juniorYearBama/bamaFall22/mis321/c#/PA2/obj/Debug/net6.0/ref/PA2.dll
