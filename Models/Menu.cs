@@ -23,25 +23,30 @@ namespace PA2.Models
             
             Console.Clear();
             
+            bool clearedMenu = false;
             int startMenuChoice = 0;
-            System.Console.WriteLine("\t\t\tPlayer 1:\n\n\t\tPress Enter To Select A Character...");
-            Console.ReadKey();
-            System.Console.WriteLine();
-            System.Console.WriteLine("\t\t1. Jack Sparrow");
-            System.Console.WriteLine("\t\t2. Davey Jones");
-            System.Console.WriteLine("\t\t3. Will Turner");
-            
-            try
-            {
-                startMenuChoice = int.Parse(Console.ReadLine());
-            }
-            catch (Exception ex)
-            {
-                System.Console.WriteLine(ex.Message + "\nPress Enter to select a continue...");
-                StartMenu();
+
+
+            while(clearedMenu == false){
+                System.Console.WriteLine("\t\t\tPlayer 1:\n\n\t\tPress Enter To Select A Character...");
+                Console.ReadKey();
+                System.Console.WriteLine();
+                System.Console.WriteLine("\t\t1. Jack Sparrow");
+                System.Console.WriteLine("\t\t2. Davey Jones");
+                System.Console.WriteLine("\t\t3. Will Turner");
+
+                try
+                {
+                    startMenuChoice = int.Parse(Console.ReadLine());
+                    clearedMenu = true;
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.Message);
+                }
             }
 
-          if(startMenuChoice < 1 || startMenuChoice > 3)
+            if(startMenuChoice < 1 || startMenuChoice > 3)
                 {
                     System.Console.WriteLine("Bad Entry\nPress Enter to continue...");
                     Console.ReadKey();

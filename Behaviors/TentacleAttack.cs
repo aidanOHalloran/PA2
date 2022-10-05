@@ -6,7 +6,7 @@ namespace PA2.Behaviors
     public class TentacleAttack : IAttack
     {
         public void Attack(){
-            System.Console.Write("Smother with his tentacles (gross)");
+            System.Console.Write("Smother with his tentacles (gross)!");
         }
     }
 }

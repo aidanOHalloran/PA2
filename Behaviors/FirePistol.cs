@@ -6,7 +6,7 @@ namespace PA2.Behaviors
     public class FirePistol : IAttack
     {
         public void Attack(){
-            System.Console.Write("Fires His Pistol");
+            System.Console.Write("Fires His Pistol!");
         }
     }
 }

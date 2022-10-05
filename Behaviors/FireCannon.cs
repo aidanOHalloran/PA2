@@ -7,7 +7,7 @@ namespace PA2.Behaviors
     {
         public void Attack()
         {
-           System.Console.Write("Fire His Cannon!");
+           System.Console.Write("Fire His Cannon");
         }
     }
 }
